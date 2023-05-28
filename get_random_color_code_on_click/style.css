@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,600&display=swap');
+
+
+body{
+    font-family : 'Playfair', serif;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.hex-color{
+    text-align: center;
+}
+.hex-color h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    animation: changecolor 5s infinite alternate;
+}
+
+.hex-color h2{
+    font-size: 2rem;
+    margin-top: 15%;
+}
+
+@keyframes changecolor {
+    0%{
+        color: red;
+    }
+    20%{
+        color: orange;
+    }
+    40%{
+        color: yellow;
+    }
+    60%{
+        color: green;
+    }
+    80%{
+        color: blue;
+    }
+    100%{
+        color: purple;
+    }
+    
+}
