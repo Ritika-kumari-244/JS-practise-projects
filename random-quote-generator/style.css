@@ -1,0 +1,42 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.container{
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+.quotes{
+    border: 10px solid rgb(247, 141, 4);
+    width: 900px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    color: rgb(82, 77, 77);
+    background-color: aquamarine;
+
+}
+.quote p {
+    font-size: 2rem;
+}
+.quote h3 {
+    font-size: 1.5rem;
+}
+
+@media(max-width:480px){
+    .quote p {
+        font-size: 1rem;
+    }
+    .quote h3 {
+        font-size: 1rem;
+    }
+}
