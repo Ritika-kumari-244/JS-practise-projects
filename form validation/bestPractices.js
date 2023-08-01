@@ -12,18 +12,30 @@ const emaill = document.getElementById("emaill")
 
 const validEmailRegex = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
 
+const validationMessages = {
+    enterUserName: " **please enter username** ",
+    minLengthOfUserName: " **please enter atleast 3 letter username** ",
+    onlyAlphabeticUserName: " **please enter only alphabets username** ",
+
+    requiredPass: " **please enter password**",
+    minPassLength: " **please enter atleast 6 letter password** ",
+    requiredConfirmPass: " **please enter Confirm password**",
+    confirmPassNotMatched: " **password don't match** ",
+
+    requiredEmail: " **please enter your email**",
+    notAValidEmail: " **please enter a valid email like abc@example.com**"
+}
+
 function validation() {
 
 
     // this block validate userName and inject validation message inside dom
     if (user.value == "") {
-        userr.innerHTML = " **please enter username** ";
+        userr.innerHTML = validationMessages.enterUserName;
     } else if (user.length < 3) {
-        userr.innerHTML =
-            " **please enter atleast 3 letter username** ";
+        userr.innerHTML = validationMessages.minLengthOfUserName;
     } else if (!isNaN(user.value)) {
-        userr.innerHTML =
-            " **please enter only alphabets username** ";
+        userr.innerHTML = validationMessages.onlyAlphabeticUserName;
     } else {
         userr.innerHTML = "";
     }
@@ -31,10 +43,9 @@ function validation() {
 
     // this block validate userPassword and inject validation message inside dom
     if (pass.value == "") {
-        passs.innerHTML = " **please enter password**";
+        passs.innerHTML = validationMessages.requiredPass;
     } else if (pass.value.length < 6) {
-        passs.innerHTML =
-            " **please enter atleast 6 letter password** ";
+        passs.innerHTML = validationMessages.minPassLength;
     } else {
         passs.innerHTML = "";
     }
@@ -42,22 +53,20 @@ function validation() {
 
     // this block validate userConfirmPassword and inject validation message inside dom
     if (conpass.value == "") {
-        conpasss.innerHTML = " **please enter password**";
+        conpasss.innerHTML = validationMessages.requiredConfirmPass;
     } else if (pass.value == conpass.value) {
         conpasss.innerHTML = "";
     } else {
-        conpasss.innerHTML = " **password don't match** ";
+        conpasss.innerHTML = validationMessages.confirmPassNotMatched;
     }
 
 
     // this block validate userEmail and inject validation message inside dom
     if (email.value == "") {
-        emaill.innerHTML =
-            " **please enter your email**";
+        emaill.innerHTML = validationMessages.requiredEmail;
     }
     else if (!email.value.match(validEmailRegex)) {
-        emaill.innerHTML =
-            " **please enter a valid email**";
+        emaill.innerHTML = validationMessages.notAValidEmail;
     } else {
         emaill.innerHTML = "";
     }
