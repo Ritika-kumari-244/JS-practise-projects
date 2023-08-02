@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 input{
     margin: 3px;
     width: 500px;
@@ -22,4 +23,30 @@ input{
 span{
     color: red;
     
+=======
+input{
+    margin: 3px;
+    width: 500px;
+    height: 35px;
+    font-size: 20px;
+    color: rgb(3, 3, 98);
+    border-radius: 20px;
+    border: 1.5px solid rgb(3, 3, 98);
+}
+
+#btn{
+    width: 500px;
+    height: 35px;
+    font-size: 20px;
+    background-color: darkgreen;
+    color: white;
+    border-radius: 0px 50px;
+}
+#btn:hover{
+    background-color: rgb(3, 3, 98);
+}
+span{
+    color: red;
+    
+>>>>>>> e093e5f8adb6110137463cb3bde2b83f504252c4
 }
