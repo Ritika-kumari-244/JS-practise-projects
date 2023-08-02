@@ -8,9 +8,13 @@ const conpass = document.getElementById("conpass");
 const conpasss = document.getElementById("conpasss")
 
 const email = document.getElementById("email");
-const emaill = document.getElementById("emaill")
+const emaill = document.getElementById("emaill");
+
+const mobile = document.getElementById("mobile");
+const mobilee = document.getElementById("mobilee");
 
 const validEmailRegex = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
+const mobileNumValid = /"^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"/gmi
 
 const validationMessages = {
     enterUserName: " **please enter username** ",
@@ -24,6 +28,9 @@ const validationMessages = {
 
     requiredEmail: " **please enter your email**",
     notAValidEmail: " **please enter a valid email like abc@example.com**"
+
+    enterMoblieNum: "**please enter your mobile number**";
+    notAValidNumber: "**please enter a valid mobile number**;
 }
 
 function validation() {
@@ -32,7 +39,7 @@ function validation() {
     // this block validate userName and inject validation message inside dom
     if (user.value == "") {
         userr.innerHTML = validationMessages.enterUserName;
-    } else if (user.length < 3) {
+    } else if (user.value.length < 3) {
         userr.innerHTML = validationMessages.minLengthOfUserName;
     } else if (!isNaN(user.value)) {
         userr.innerHTML = validationMessages.onlyAlphabeticUserName;
@@ -71,6 +78,15 @@ function validation() {
         emaill.innerHTML = "";
     }
 
+
+    // this block validate usermobile number and inject validation message inside dom
+    if(mobile.value == ""){
+        mobilee.innerHTML = validationMessages.requiredMobile;
+    }else if(mobile.value.match(mobileNumValid)){
+        mobile.innerHTML = validationMessages.notAValidNumber;
+    }else {
+        mobilee.innerHTML = "";
+    }
 
     // this return statement does nothing still it is good practice to returm something instead of nothing.
     return false;
